@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #AUTHOR: 0xyassine
-#FULL DOCUMENTATION:
+#FULL DOCUMENTATION: https://blog.byteninja.net/dns-shield-blocklists-updater/
 
 #SOURCE THE VARIABLES
 . `dirname $0`/variables.conf
