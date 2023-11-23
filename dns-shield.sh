@@ -99,7 +99,7 @@ function to_dnsmasq_format()
 {
 	local SOURCE=$1
 	local DESTINATION=$2
-	cat "$SOURCE" | grep -vE '(^#|^/|^\|\@|\,|##|\|)' | grep -oP '([a-zA-Z0-9-]+((\.|\-)[a-zA-Z0-9-]+)*(\.|\-)[a-zA-Z]{2,})(?=$|\s|\/)' | sed -e 's/\///g' | awk '{if ($0 != "") print "address=/" $0 "/#"}'
+	cat "$SOURCE" | grep -vE '(^#|^/|^\|\@|\,|##|\|)' | sed -e 's/#.*//g' | grep -oP '([a-zA-Z0-9-]+((\.|\-)[a-zA-Z0-9-]+)*(\.|\-)[a-zA-Z]{2,})(?=$|\s|\/)' | sed -e 's/\///g' | awk '{if ($0 != "") print "address=/" $0 "/#"}'
 	sleep 5
 }
 
